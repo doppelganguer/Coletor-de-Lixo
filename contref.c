@@ -16,13 +16,12 @@ void *malloc2(int tamanho){
     lista=aux;
   }
   return aux->address;
-}
+}// Cria os componentes da lista
 
 void atrib2(void* endereco, void* endereco2){
   heap *aux = lista;
   heap *aux2=NULL;
   
-  //falta atribuir endereco=endereco2
  
   while(aux!=NULL){
     if(aux->address==endereco){
@@ -49,7 +48,7 @@ void atrib2(void* endereco, void* endereco2){
     aux=aux->prox;  
     }
   }
-}
+}//faz a atribuição de endereço na lista e se a lista chegar a zero exclui a lista
 
 void dump(){
   heap *aux=lista;
@@ -59,47 +58,5 @@ void dump(){
     aux = aux->prox;
   }
   printf("\n");
-}
+}//imprimi em tela os dados da lista
 
-// void altera(void *endereco,int inc){
-//     heap *aux=lista;
-//     while(aux!=NULL && aux->end!=endereco){
-//         aux=aux->prox;
-//     }//percorre a lista até que encontre o endereço
-    
-//     if(aux!=NULL && aux->end==endereco){
-//         aux->cont = aux->cont+inc;
-//     }
-// }//altera o contador, pra +1 ou -1, recebe o endereço
-
-// void atrib2(void *a,void *b){
-//     heap *aux=lista;
-//        while(aux!=NULL){
-//             if(aux->end==a){
-//                 altera(aux->end,-1);
-//             }else if(aux->end==b){
-//                 altera(aux->end,1);
-//             }
-//             aux=aux->prox;
-//         } 
-//     a=b;
-// }// varre a lista, atribuição de ponteiros em C
-
-// void dump(){ //varre lista até achar alguem q tenha 0 no contador, se tiver zero da free
-//     heap *ant=lista;
-//     heap *aux=ant->prox;
-//     if(ant->cont==0){ //saber se o primeiro elemento tem contador 0, se sim, libera a memoria
-//         lista=aux;
-//         free(ant);
-//     }else{
-//         while(aux!=NULL){
-//             if(aux!=NULL && aux->cont==0){
-//                 ant->prox=aux->prox; 
-//                 free(aux);
-//                 //aux=ant->prox;
-//             }
-//             ant=aux;
-//             aux=aux->prox;
-//         }
-//     }
-// }
