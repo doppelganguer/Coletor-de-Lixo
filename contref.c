@@ -58,5 +58,5 @@ void dump(){
     aux = aux->prox;
   }
   printf("\n");
-}//imprimi em tela os dados da lista
+}//imprime em tela os dados da lista
 
